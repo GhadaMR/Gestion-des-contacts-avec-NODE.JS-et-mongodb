@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css" />
+    <script src="javaScript.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="jQuery.js"></script>
+    <title>Gestionnaire de contacts</title>
+</head>
+
+<body>
+    <header>
+        <h1>Gestionnaire de contacts</h1>
+    </header>
+    
+    <section>
+        <article id="formContacts">
+            <header>
+                <h1>Ajout d'un contact</h1>
+            </header>
+            <details>
+                <summary>
+                    Cliquer pour voir le formulaire.
+                </summary>
+                <form method="post" id="contactForm">
+                    <fieldset>
+                        <legend>Nouveau contact</legend>
+                        <label for="nom">
+                            <span>Nom :</span>
+                            <input type="text" id="nom" name="nom" required maxlength="32" pattern="^[^%&$]+$" oninput="validateInput(this)">
+                        </label>
+                        <label for="prenom">
+                            <span>Prénom :</span>
+                            <input type="text" id="prenom" name="prenom" required maxlength="32" pattern="^[^%&$]+$"oninput="validateInput(this)">
+                        </label>
+                        <label for="telephone">
+                            <span>Téléphone :</span>
+                            <input type="tel" id="telephone" name="telephone" required maxlength="32" pattern="^[^%&$]+$"placeholder="+216 99 99 99" oninput="validateInput(this)">
+
+                        </label>
+
+                        <label for="email">
+                            <span>Email :</span>
+                            <input type="email" id="email"  name="email" pattern=".*@enit\.utm\.tn$" oninput="validateInput(this)">
+                        </label>
+                        <label for="date_naissance">
+                            <span>Date de naissance :</span>
+                            <input type="date" id="date_naissance" name="date_naissance" required onblur="verifdate()" oninput="validateInput(this)">
+                        </label>
+                        <label for="nombreEnfants" >
+                            <span>Nombre d'enfants :</span>
+                            0 <input type="range" id="nombreEnfants" id="nombreEnfants" min="0" max="5" oninput="validateInput(this)" > 5
+                        </label>
+                    </fieldset>
+                    <button id="Ajouter-client" type="submit">OK</button>
+                </form>
+            </details>
+        </article>
+        <article id="contacts">
+            <header>
+                <h1>Liste des contacts</h1>
+            </header>
+            <table id="contactsTable">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Prénom</th>
+                        <th>Nom</th>
+                        <th>Téléphone</th>
+                        <th>Email</th>
+                        <th>Date de naissance</th>
+                        <th>Nombre enfants</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        
+                    </tr>
+                   
+                </tbody>
+            </table>
+            <img src="poubelle.png" id="poubelle">
+            <audio id="poubelleSound" src="poubelleSound.mp3"></audio>
+        </article>
+    </section>
+
+  
+    <footer>Enit - Formation HTML5 </footer>
+</body>
